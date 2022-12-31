@@ -8,3 +8,7 @@ Test the api:
 
 http://localhost:8000/ip-service/8.8.8.8
 
+Run locally:
+
+http://localhost:8001/ip-service/8.8.8.8
+
