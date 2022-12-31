@@ -13,10 +13,12 @@ class Results:
         self._results.clear()
         self._data.clear()
 
+    def add_total_time(self, t: float):
+        self._total_time = t
+
     def add_result(self, r: Response, name: str, t: float):
         success = True if r.status_code == 200 else False
         self._results[name] = {'time': f'{t:.3f}', 'status': success}
-        self._total_time += t
         self._status = self._status and success
         self._data[name] = r.json()
 
