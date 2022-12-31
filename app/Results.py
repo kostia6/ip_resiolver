@@ -1,3 +1,6 @@
+from requests import Response
+
+
 class Results:
 
     def __init__(self):
@@ -10,7 +13,7 @@ class Results:
         self._results.clear()
         self._data.clear()
 
-    def add_result(self, r, name: str, t):
+    def add_result(self, r: Response, name: str, t: float):
         success = True if r.status_code == 200 else False
         self._results[name] = {'time': f'{t:.3f}', 'status': success}
         self._total_time += t
